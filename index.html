@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Je m'entraine aux tables de multiplications</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+
+    <section id="accueil" class="" >
+
+        <div class="titre">
+
+            <h1>Jeu des tables de multiplication</h1>
+
+        </div>
+
+        <div class="choix-tables">
+
+            <h2>Choisis une table</h2>
+
+            <div class="tables">
+
+                <div class="table" id="table-1">Table de<br><span class="nbre-table">1</span></div>
+                <div class="table" id="table-2">Table de<br><span class="nbre-table">2</span></div>
+                <div class="table" id="table-3">Table de<br><span class="nbre-table">3</span></div>
+                <div class="table" id="table-4">Table de<br><span class="nbre-table">4</span></div>
+                <div class="table" id="table-5">Table de<br><span class="nbre-table">5</span></div>
+                <div class="table" id="table-6">Table de<br><span class="nbre-table">6</span></div>
+                <div class="table" id="table-7">Table de<br><span class="nbre-table">7</span></div>
+                <div class="table" id="table-8">Table de<br><span class="nbre-table">8</span></div>
+                <div class="table" id="table-9">Table de<br><span class="nbre-table">9</span></div>
+                <div class="table" id="table-10">Table de<br><span class="nbre-table">10</span></div>
+                <div class="table" id="table-random">Random<br><span class="nbre-table">?</span></div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="jeu" class="affichage-off">
+
+        <div class="titre">
+
+            <h1>Table de <span id="table-en-jeu"></span></h1>
+
+        </div>
+
+        <form action="script.js" method="post" >
+            <label for="reponse">Quel est le résultat de <span id="multiplication"></span></label>
+            <div>
+                <input type="number" id="reponse" name="resultatJoueur" autofocus >
+                <input type="submit" value="Valider">
+            </div>
+        </form>
+
+        <div id="affichage-score">
+
+            Score: <Score:span id="score"></Score:span>
+
+        </div>
+
+        <div id="nav">
+
+            <button id="nav-choix-tables">Revenir au choix des tables</button>
+            <button id="question-suivante"> Suivant </button>
+            <button id="nav-fin-du-jeu">Terminer le jeu</button>
+
+        </div>
+
+
+
+    </section>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    background: #8A2387;
+}
+
+body {
+    width:100%;
+    height: 100%;
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    display: flex;
+    text-align: center;
+    font-family: sans-serif;
+
+}
+
+section {
+    width: 100%;
+    max-width: 1500px;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+section div {
+    margin: auto
+}
+
+.titre {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin: 1em;
+    font-size: 2.5em;
+}
+
+h2 {
+
+    color: white;
+    margin-bottom: 1em;
+}
+
+/* Carrés de table */
+.choix-tables {
+
+}
+
+.tables {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.table {
+    width: 7em;
+    height: 10em;
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
+    margin: 2em;
+    transition: all 0.2s ease;
+}
+
+.table:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.table:active{
+
+    box-shadow:rgba(0, 0, 0, 0) 0px 0px;
+}
+
+.nbre-table {
+    font-size: 5em;
+}
+
+/* Section de jeu */
+
+#jeu {
+    width: 70%;
+    padding: 2em 0.5em;
+    margin: 10em auto;
+    background-color:  background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ ;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 5px;
+}
+
+#jeu h1 {
+    color: white;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+input {
+
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-size: 8em;
+    width: 50%;
+    text-align: center;
+    color: white;
+}
+
+input[type="submit"]{
+    font-size: 2em;
+    width: 20%;
+    padding: 1em 0em;
+    margin-left: 1em;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease; 
+}
+
+input[type="submit"]:hover {
+
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+input[type="submit"]:active {
+
+    box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px;
+}
+
+form div {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#affichage-score {
+
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+#nav {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#nav button {
+
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 1em;
+    padding: 0.5em;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+
+}
+
+#nav button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#nav button:active{
+
+    box-shadow:rgba(0, 0, 0, 0) 0px 0px 0px;
+}
+
+
+@media (max-width: 1024px) {
+    section {
+        margin: 0.5em;
+    }
+    .table:hover {
+        cursor: pointer;
+        transform: none;
+    }
+
+    #nav button:hover {
+        cursor: pointer;
+        transform: none;
+    }
+
+    input[type="submit"]:hover {
+
+        cursor: pointer;
+        transform: none;
+    }
+
+}
+
+/* Class pour fonctiosn js */
+
+.affichage-off {
+    display: none;
+}
