@@ -1,7 +1,8 @@
 //Importation des tables
 
 import {tableDeCinq, tableDeDeux, tableDeDix, tableDeHuit, tableDeNeuf, tableDeQuatre, tableDeSept, tableDeSix, tableDeTrois, tableDeUn} from './donnees.js';
-
+ 
+console.log(tableDeCinq)
 
 
 // choix au hasard d'une table de multiplication
@@ -29,6 +30,7 @@ const tableDeNeufElement = document.getElementById("table-9");
 const tableDeDixElement = document.getElementById("table-10");
 const tableRandomElement = document.getElementById("table-random");
 
+const tables = document.querySelectorAll('.table');
 // Création des constantes d'éléments
 
 const accueilElement = document.getElementById("accueil");
@@ -39,6 +41,13 @@ const affichageMultiplicationElement = document.getElementById("multiplication")
 const form = document.querySelector("form");
 const inputNumber = document.getElementById('reponse');
 const inputSubmit = document.querySelector('input[type="submit"]');
+
+    //Préparation des constantes pour l'affichage du message de félicitation
+    const affichageFelicitation = document.createElement("div");
+    affichageFelicitation.setAttribute('id', 'message-resultat');
+
+    const divNavElement = document.getElementById("nav");
+
 
     //Boutons de nav
 const retourChoixTablesElement = document.getElementById("nav-choix-tables");
@@ -57,9 +66,8 @@ function affichageJeu () {
 };
 
 
-    //Générateur random de question dans la table choisie et affihage 
+// fonction du jeu
 function jeu (table) {
-
         //Générateur de question et affichage de la question
     let multiplication = table[(Math.floor(Math.random()*10) + 1)];
     
@@ -72,79 +80,163 @@ function jeu (table) {
         const multiplicationAffichage = multiplication.substring(0, 1) + "x" + multiplication.substring(2, 3);
         affichageMultiplicationElement.innerText = multiplicationAffichage;
     }
+
+    console.log(multiplication)
+
+    //Gestion du résultat
         const resultat = form.addEventListener('submit', (event) => {
 
             event.preventDefault();
 
+            if(inputNumber.value){
             //Récupération de la reponse
-            const reponseElement = document.getElementById("reponse");
-            const reponse = reponseElement.value
+            const reponse = inputNumber.value
 
-
+            
             //Traitement de la réponse
-
-            const resultatJuste = parseInt(multiplication);
+            const multiplicationSplit = multiplication.split('*');
+            const resultatJuste = parseInt(multiplicationSplit[0], 10) * parseInt(multiplicationSplit[1],10)
+            console.log(resultatJuste)
             
             if (parseInt(reponse) === resultatJuste) {
-
-                //Affichage du message de félicitation
-                const affichageFelicitation = document.createElement("div");
+                
                 affichageFelicitation.innerText = "Bravo! C'était la bonne réponse!";
-                const divNavElement = document.getElementById("nav");
                 divNavElement.insertAdjacentElement('beforebegin', affichageFelicitation);
-
-               
 
                 score++
                 nombreDeJeu++
 
+                scoreElement.innerText = score + '/' + nombreDeJeu;
+
+                // //Blocage du champs input
+                // inputNumber.toggleAttribute('autofocus')
+                // inputNumber.toggleAttribute('disabled');
+                // inputSubmit.toggleAttribute('disabled');
+                
+
             } else {
                 
                 //Affichage du message de réponse fausse
-                const affichageFelicitation = document.createElement("div");
-                affichageFelicitation.innerText = "Dommage! La bonne réponse était: " + resultatJuste;
+                
+                affichageFelicitation.innerText = "Dommage! La bonne réponse de " + multiplication + " était: " + resultatJuste;
 
                 const divNavElement = document.getElementById("nav");
 
                 divNavElement.insertAdjacentElement('beforebegin', affichageFelicitation);
 
                 nombreDeJeu++
+
+                scoreElement.innerText = score + '/' + nombreDeJeu;  
+
+                //Blocage du champs input
+                // inputNumber.toggleAttribute('autofocus')
+                // inputNumber.toggleAttribute('disabled');
+                // inputSubmit.toggleAttribute('disabled');
+
+                 
             }
 
-             //Blocage du champs input
-             inputNumber.autofocus = !inputNumber.autofocus;
-             inputNumber.disabled = !inputNumber.disabled;
 
-             inputSubmit.disabled = !inputSubmit.disabled;
 
-            scoreElement.innerText = score + '/' + nombreDeJeu;
+            
+            form.reset();
+
+            multiplication = table[(Math.floor(Math.random()*10) + 1)];
+    
+            if (multiplication.substring(0, 2) === '10') {
+
+            const multiplicationAffichage = multiplication.substring(0, 2) + "x" + multiplication.substring(3, 4);
+            affichageMultiplicationElement.innerText = multiplicationAffichage;
+            } else {
+
+            const multiplicationAffichage = multiplication.substring(0, 1) + "x" + multiplication.substring(2, 3);
+            affichageMultiplicationElement.innerText = multiplicationAffichage;
+            }
+            }
         })  
-}
 
+}
 
 // Démarrage du jeu en fonction de la table choisie
 tableDeUnElement.addEventListener('click', () => {
     affichageJeu();
     affichageTableElement.innerText = 1;
     jeu(tableDeUn);
-
 });
+
+tableDeDeuxElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 2;
+    jeu(tableDeDeux);
+});
+
+tableDeTroisElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 3;
+    jeu(tableDeTrois);
+});
+
+tableDeQuatreElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 4;
+    jeu(tableDeQuatre);
+});
+
+tableDeCinqElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 5;
+    jeu(tableDeCinq);
+});
+
+tableDeSixElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 6;
+    jeu(tableDeSix);
+});
+
+tableDeSeptElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 7;
+    jeu(tableDeSept);
+});
+
+tableDeHuitElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 8;
+    jeu(tableDeHuit);
+});
+
+tableDeNeufElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 9;
+    jeu(tableDeNeuf);
+});
+
+tableDeDixElement.addEventListener('click', () => {
+    affichageJeu();
+    affichageTableElement.innerText = 10;
+    jeu(tableDeDix);
+});
+
+tableRandomElement.addEventListener('click', () => {
+    affichageJeu();
+    const numTable = tableRandom[0][2];
+    affichageTableElement.innerText = numTable
+    jeu(tableRandom);
+
+})
+
 
 
 // Navigation
 
-retourChoixTablesElement.addEventListener('click', affichageJeu)
+
+finDuJeuElement.addEventListener('click', () => {
+    location.reload();
+});
+
+retourChoixTablesElement.addEventListener('click',() => {
+    location.reload();
+})
 
 
-
-
-
-
-
-
-// Affichage du score
-
-
-
-console.log(nombreDeJeu)
-console.log(score)
