@@ -261,6 +261,7 @@ form div {
         flex-direction: raw;
         justify-content: center;
         align-items: center;
+        width: 50%;
     }
 
     #jeu {
@@ -301,7 +302,7 @@ form div {
 
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
 
     body {
         width:100%;
@@ -322,6 +323,15 @@ form div {
 
     section div {
         margin: 0em;
+    }
+
+    .tables {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .table:hover {
@@ -397,17 +407,28 @@ form div {
         background: linear-gradient(to top, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         background-repeat: no-repeat;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         text-align: center;
         font-family: sans-serif;
     
     }
 
     section {
-        margin: 0.5em;
+        margin: 0.5em 0em;
     }
 
     section div {
         margin: 0em;
+    }
+
+    .tables {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .table:hover {
@@ -415,9 +436,42 @@ form div {
         transform: none;
     }
 
+    .table {
+        width: 5em;
+        height: 6em;
+        background: #8E2DE2;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
+        margin: 0.8em;
+        transition: all 0.2s ease;
+    }
+
+    .nbre-table {
+        font-size: 3em;
+    }
+
     #nav button:hover {
         cursor: pointer;
         transform: none;
+    }
+
+    h1 {
+        margin: 0.5em 0.5em;
+        font-size: 2em;
+    }
+
+    h2 {
+
+        color: white;
+        margin-bottom: 1em;
+        font-size: 1.2em;
     }
 
     input[type="submit"]:hover {
@@ -435,15 +489,27 @@ form div {
     }
 
     #jeu {
-        width: 70%;
+        width: 90%;
         height: 60%;
         padding: 2em 0.5em;
-        margin: 10em auto;
+        margin: 15vh auto;
         background-color:  background: #8E2DE2;  /* fallback for old browsers */
         background: -webkit-linear-gradient(to top, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to top, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ ;
         border-radius: 15px;
         box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
+    }
+
+    #jeu h1 {
+        color: white;
+        margin: 0;
+        margin-bottom: 0.5em;
+    }
+    
+    label {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 1em;
     }
 
     input {
@@ -454,18 +520,18 @@ form div {
         border: none;
         border-radius: 10px;
         box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
-        font-size: 8em;
+        font-size: 5em;
         width: 80%;
         text-align: center;
         color: white;
     }
 
     input[type="submit"]{
-        font-size: 2em;
+        font-size: 1.5em;
         width: 40%;
         padding: 1em 0em;
         margin-left: 0em;
-        margin-top: 0.5em;
+        margin-top: 1em;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
         transition: all 0.3s ease; 
     }
